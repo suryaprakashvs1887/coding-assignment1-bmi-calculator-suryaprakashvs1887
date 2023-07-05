@@ -8,8 +8,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/server.html')
   })
   app.post('/',(req,res)  =>{
-    var weight = Number(req.body.n1);
-    var height = Number(req.body.n2);
+    var weight = parseFloat(req.body.n1);
+    var height = parseFloat(req.body.n2);
     var bmi = weight / (height * height);
     res.send("Your BMI is:" + bmi)
   })
