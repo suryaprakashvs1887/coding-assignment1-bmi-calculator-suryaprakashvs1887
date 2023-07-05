@@ -9,9 +9,9 @@ app.get('/', (req, res) => {
   })
   app.post('/',(req,res)  =>{
     var weight = parseFloat(req.body.n1);
-    var height = parseFloat(req.body.n2);
+    var height = parseFloat(req.body.n2)/100;
     var bmi = weight / (height * height);
-    res.send("Your BMI is:" + bmi)
+    res.send("Your BMI is:" + bmi.toFixed(2))
   })
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
